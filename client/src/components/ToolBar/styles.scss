@@ -1,0 +1,67 @@
+@import 'styles/index.scss';
+
+.tools-bar {
+  &__up {
+    position: absolute;
+    top: 24px;
+    left: 351px;
+    z-index: 200;
+    
+    &__container {
+      display: flex;
+    }
+  }
+
+  &__down {
+    position: absolute;
+    bottom: 24px;
+    left: 351px;
+    z-index: 200;
+
+    &__container {
+      @include border-by-level("max");
+
+      width: 48px;
+      height: 48px;
+      background: #DCD6F7;
+    }
+  }
+}
+
+
+.circle-button {
+  @include border-by-level("max");
+
+  padding: 12px;
+  background: #DCD6F7;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &__icon {    
+    filter: invert(27%) sepia(8%) saturate(3009%) hue-rotate(195deg) brightness(96%) contrast(88%);
+  }
+}
+
+.circle-button:not(:first-child) {
+  margin-left: 12px;
+}
+
+.circle-button:hover {
+  background: #A6B1E1;
+
+  .circle-button__icon {
+    filter: invert(84%) sepia(5%) saturate(6206%) hue-rotate(188deg) brightness(100%) contrast(77%);
+  }
+}
+
+.circle-button--selected {
+  background: #A6B1E1;
+
+  .circle-button__icon {
+    filter: invert(84%) sepia(5%) saturate(6206%) hue-rotate(188deg) brightness(100%) contrast(77%);
+  }
+}

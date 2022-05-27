@@ -1,0 +1,106 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^6.4.3",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@gokiprotocol/walletkit": "^1.6.5",
+    "@metaplex/js": "^4.12.0",
+    "@reach/dialog": "^0.17.0",
+    "@react-three/cannon": "^6.3.0",
+    "@react-three/drei": "^9.11.2",
+    "@react-three/fiber": "^8.0.19",
+    "@react-three/postprocessing": "^2.3.2",
+    "@reduxjs/toolkit": "^1.8.1",
+    "@saberhq/solana-contrib": "^1.12.67",
+    "@saberhq/token-utils": "^1.12.67",
+    "@saberhq/use-solana": "^1.12.67",
+    "@solana/web3.js": "^1.41.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "@testing-library/user-event": "^13.5.0",
+    "bn.js": "^5.2.0",
+    "buffer": "^6.0.3",
+    "colyseus.js": "^0.14.13",
+    "ipfs-http-client": "^56.0.3",
+    "jsbi": "^4.3.0",
+    "localforage": "^1.10.0",
+    "polished": "^4.2.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "sass": "^1.51.0",
+    "three": "^0.140.2",
+    "tiny-invariant": "^1.2.0",
+    "uuid": "^8.3.2"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "format:fix": "prettier --write \"**/*.+(ts|tsx|json|scss)\"",
+    "lint:fix": "eslint --fix \"**/*.+(ts|tsx)\"",
+    "prepare": "husky install"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "yarn format:fix",
+      "yarn lint:fix",
+      "git add ."
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
+    "@emotion/babel-plugin": "^11.9.2",
+    "@types/babel__core": "^7.1.19",
+    "@types/bn.js": "^5.1.0",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "18.0.4",
+    "@types/redux-logger": "^3.0.9",
+    "@types/three": "^0.140.0",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "babel-loader": "^8.2.5",
+    "babel-preset-react-app": "^10.0.1",
+    "commitlint": "^17.0.0",
+    "eslint": "^8.15.0",
+    "husky": "^8.0.1",
+    "jest": "^28.1.0",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "r3f-perf": "^6.2.6",
+    "ts-jest": "^28.0.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4",
+    "webpack": "^5.72.0"
+  }
+}

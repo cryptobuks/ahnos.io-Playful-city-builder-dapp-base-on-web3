@@ -1,0 +1,45 @@
+$border-level-1: 12px;
+$border-level-2: 8px;
+$border-level-3: 4px;
+$border-level-max: 50%;
+
+$font-weight-light: 400;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+@mixin border-by-level($border-level) {
+  @if $border-level == 1 {
+    border-radius: $border-level-1;
+  }
+
+  @if $border-level == 2 {
+    border-radius: $border-level-2;
+  }
+
+  @if $border-level == 3 {
+    border-radius: $border-level-3;
+  }
+
+  @if $border-level == "max" {
+    border-radius: $border-level-max;
+  }
+}
+
+@mixin font-weight-by-name($weight-name) {
+  @if $weight-name == "Light" {
+    font-weight: $font-weight-light;
+  }
+
+  @if $weight-name == "Regular" {
+    font-weight: $font-weight-regular;
+  }
+
+  @if $weight-name == "Medium" {
+    font-weight: $font-weight-medium;
+  }
+
+  @if $weight-name == "Bold" {
+    font-weight: $font-weight-bold;
+  }
+}

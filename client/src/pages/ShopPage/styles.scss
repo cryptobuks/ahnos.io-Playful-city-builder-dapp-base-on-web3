@@ -1,0 +1,285 @@
+@import 'styles/index.scss';
+
+.shop-page {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 99999;
+}
+
+.shop-modal {
+  width: 100%;
+  height: 100vh;
+  
+  &__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .8;
+  }
+
+  &__container {
+    @include border-by-level(1);
+
+    width: 1096px;
+    height: 792px;
+    background: #fff;
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 42px 40px;
+
+    &__close-button {
+      @include border-by-level(2);
+
+      width: 36px;
+      height: 36px;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    &__close-button:hover {
+      background: #D9D9D9;
+    }
+
+    &__tabs {
+      display: flex;
+      // justify-content: space-between;
+
+      &__title {
+        @include border-by-level(2);
+
+        padding: 14px 28px;        
+        color: #595959;
+        cursor: pointer;
+
+        &--inner {
+          @include font-weight-by-name("Medium");
+
+          font-size: 20px;
+        }
+      }
+    }
+
+    &__shopping {
+      @include border-by-level(2);
+
+      height: 582px;
+      width: 100%;
+      margin-top: 28px;
+      display: flex;
+
+      &__details {
+        @include border-by-level(2);
+
+        height: 100%;
+        width: 280px;
+        background: #ECECEC;
+        padding: 12px;
+        position: relative;
+
+        &__image {
+          @include border-by-level(3);
+
+          width: 100%;
+          height: 256px;
+          background: #fff;
+          background-repeat: no-repeat;
+          background-size: 100% 256px;
+
+        }
+
+        &__name {
+          margin-top: 16px;
+
+          &--inner {
+            @include font-weight-by-name("Medium");
+            
+            font-size: 20px;
+          }
+        }
+
+        &__info-container {
+          overflow: scroll;
+          width: 100%;
+          height: 212px;
+
+          &__description {
+            margin-top: 8px;
+  
+            &--inner {
+              @include font-weight-by-name("Light");
+  
+              font-size: 12px;
+            }
+          }
+  
+          &__rarity{
+            margin-top: 8px;
+  
+            &--inner {
+              @include font-weight-by-name("Medium");
+  
+              font-size: 12px;
+            }
+          }
+        }
+
+        &__info-container::-webkit-scrollbar {
+          display: none;
+        }
+
+        &__price {
+          @include border-by-level(3);
+
+          position: absolute;
+          background: #fff;
+          color: #000;
+          bottom: 12px;
+          left: 12px;
+          padding: 8px 12px;
+          display: flex;
+          pointer-events: none;
+
+          &__text {
+            @include font-weight-by-name("Medium");
+
+            margin-left: 8px;
+            font-size: 16px;
+          }
+        }
+
+        &__buy-now {
+          @include border-by-level(3);
+          position: absolute;
+          bottom: 12px;
+          right: 12px;
+          background: #000;
+          color: #fff;
+          padding: 8px 28px;
+          cursor: pointer;
+
+          &--inner {
+            @include font-weight-by-name("Medium");
+            font-size: 16px;
+          }
+        }
+
+      }
+
+      &__previews {
+        height: 100%;
+        width: 712px;
+        margin-left: 24px;
+        overflow: scroll;
+        display: flex;
+        flex-wrap: wrap;
+
+      }
+
+
+
+      &__previews::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &__timer {
+      @include font-weight-by-name("Medium");
+
+      margin-top: 28px;
+      font-size: 16px;
+    }
+
+  }
+}
+
+.tab__title--selected {
+  background: #D9D9D9;
+  color: #000;
+}
+
+.model-preview-card {
+  @include border-by-level(2);
+
+  width: 224px;
+  height: 306px;
+  padding: 12px;
+  background: #ECECEC;
+  position: relative;
+  margin-bottom: 24px;
+  cursor: pointer;
+
+  &__image {
+    @include border-by-level(3);
+
+    width: 100%;
+    height: 200px;
+    background: #fff;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: 100% 200px;
+  }
+
+  &__name {
+    margin-top: 12px;
+
+    &--inner {
+      @include font-weight-by-name("Medium");
+      
+      font-size: 16px;
+    }
+  }
+
+  &__price {
+    @include border-by-level(3);
+
+    position: absolute;
+    background: #fff;
+    color: #000;
+    bottom: 12px;
+    left: 12px;
+    padding: 8px 12px;
+    display: flex;
+    pointer-events: none;
+
+    &__text {
+      @include font-weight-by-name("Medium");
+
+      margin-left: 8px;
+      font-size: 16px;
+    }
+  }
+
+  &__rarity {
+    @include border-by-level(3);
+
+    position: absolute;
+    color: #000;
+    bottom: 12px;
+    right: 12px;
+
+    &--inner{
+      @include font-weight-by-name("Medium");
+
+      font-size: 12px;
+    }
+  }
+}
+
+.model-preview-card:not(:nth-child(3n - 2)) {
+  margin-left: 20px;
+}
+
+.model-preview-card--selected {
+  border: 2px dashed black;
+}
